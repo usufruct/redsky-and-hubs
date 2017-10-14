@@ -1,0 +1,2 @@
+writer: ./env/bin/python writer.py
+worker: ./env/bin/python worker.py
