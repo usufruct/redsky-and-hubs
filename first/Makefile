@@ -1,5 +1,7 @@
+deps:
+	./env/bin/pip install -r requirements.txt
 
-start:
+start: deps
 	foreman start -e .env
 
-.PHONY: start
+.PHONY: deps, start

@@ -1,8 +1,14 @@
 import time
 import sys
+import os
+import redis
+
+
+queue = redis.StrictRedis(host='localhost', port=os.environ.get('REDIS_PORT'), db=0)
 
 while True:
-    print('hello')
+    print('olleh')
+    results = queue.brpop('simple')
+    print(results)
     sys.stdout.flush()
-    time.sleep(2)
-
+    time.sleep(1)
