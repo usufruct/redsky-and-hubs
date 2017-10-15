@@ -11,4 +11,4 @@ while True:
     results = queue.brpop('simple')
     print(results)
     sys.stdout.flush()
-    time.sleep(1)
+
