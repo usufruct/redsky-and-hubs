@@ -16,10 +16,9 @@ while True:
     reversed_param = param[::-1]
 
     # random sleep from .001 -> 2 seconds
-    sleep_time = random.randint(1, 1000)
+    sleep_time = random.randint(1, 1500)
     print("sleeping for {} milliseconds".format(sleep_time))
     print(response_key)
-    sys.stdout.flush()
 
     time.sleep(sleep_time/1000)
 

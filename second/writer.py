@@ -27,7 +27,6 @@ signal.signal(signal.SIGALRM, timeout_handler)
 
 while True:
     print('back to top')
-    sys.stdout.flush()
 
     new_task = task()
     respond_to = new_task["respond_to"]
@@ -40,23 +39,20 @@ while True:
     try:
         signal.alarm(1)
         print("looking for {}".format(respond_to))
-        sys.stdout.flush()
+
         while(answer == None):
             time.sleep(0.01)
             answer = queue.hget('response_store', respond_to)
     except TimeoutException as e:
         print('operation timed out')
         print(respond_to)
-        sys.stdout.flush()
 
     if(answer != None):
         print('answer found')
         print(respond_to)
         print(answer)
-        sys.stdout.flush()
 
     print('resetting alarm')
-    sys.stdout.flush()
     signal.alarm(0)
 
 

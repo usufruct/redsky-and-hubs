@@ -10,5 +10,4 @@ while True:
     print('olleh')
     results = queue.brpop('simple')
     print(results)
-    sys.stdout.flush()
 

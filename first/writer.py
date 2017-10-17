@@ -9,5 +9,4 @@ queue = redis.StrictRedis(host='localhost', port=os.environ.get('REDIS_PORT'), d
 while True:
     print('hello')
     queue.lpush('simple', uuid.uuid1())
-    sys.stdout.flush()
     time.sleep(1)
