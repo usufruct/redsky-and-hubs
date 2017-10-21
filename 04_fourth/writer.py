@@ -1,7 +1,7 @@
 import uuid
 import time
 import os
-from threading import Thread
+from threading import Thread, current_thread, active_count
 import json
 import redis
 
@@ -17,8 +17,12 @@ def task(respond_to, uniq):
     return task
 
 def wait_for_it(list_key):
+    print("current thread: {}".format(current_thread()))
+    print("about to wait on: {}".format(list_key))
     results = redis_client.brpop(list_key)
     print("survey sez: {}".format(results))
+    print("current thread: {}".format(current_thread()))
+    print("{} threads total".format(active_count()))
 
 
 while True:
