@@ -18,8 +18,8 @@ def task(respond_to, unique):
 while True:
     respond_to = str(uuid.uuid1())
     new_task = task(respond_to, str(uuid.uuid1()))
-    time.sleep(1)
-    print('sending job')
+    time.sleep(1.1)
+    print('sending job {}'.format(respond_to))
     queue.lpush('jobs', json.dumps(new_task))
     results = queue.brpop(respond_to)
 
