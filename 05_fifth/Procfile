@@ -1,2 +1,3 @@
 writer: env/bin/python -u writer.py
 worker: env/bin/python -u worker.py
+timekeeper: env/bin/python -u timekeeper.py
